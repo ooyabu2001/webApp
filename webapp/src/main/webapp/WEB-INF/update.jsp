@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@page import="info.searchman.*"%>
 070040のソース
 
 
@@ -26,19 +27,26 @@
 }
 </style>
 </head>
+
+
+
+<%-- shainBeanから社員情報を取得する --%>
+<%
+ShainBean shainBean = (ShainBean)request.getAttribute("shainBean");
+%>
 <body>
 	<h1>社員更新画面</h1>
 	<form action="ShainInsertComplete" method="post">
 		<table class="form-table">
 			<tr>
 				<td><label for="id">ID:</label></td>
-				<td><input type="text" id="id" name="id" class="form-input"
-					pattern="\d{3}" required title="IDは3桁の数字で入力してください"></td>
+				<td>
+				<%= shainBean.getId() %>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="name">名前:</label></td>
-				<td><input type="text" id="name" name="name" class="form-input"
-					required></td>
+				<td><%= shainBean.getName() %></td>
 			</tr>
 			<tr>
 				<td><label for="sei">姓:</label></td>

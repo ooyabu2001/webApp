@@ -32,6 +32,18 @@ public class ShainUpdate extends HttpServlet {
 
 		//リクエストからパラメータ取得して表示
 		System.out.println(request.getParameter("id"));
+		
+
+		//社員Beanを作成
+		ShainBean shainBean = new ShainBean();
+		shainBean.setId(101);
+		shainBean.setName("鈴木義信");
+		shainBean.setSei("男");
+		shainBean.setNen(2003);
+		shainBean.setAddress("宮城県仙台市");
+
+		// 更新社員をセットする
+		request.setAttribute("shainBean", shainBean);
 	
 		// update.jspへ転送
 		request.getRequestDispatcher("/WEB-INF/update.jsp").forward(request, response);

@@ -37,6 +37,9 @@ public class ShainInsertComplete extends HttpServlet {
 		System.out.println(request.getParameter("sei"));
 		System.out.println(request.getParameter("nen"));
 		System.out.println(request.getParameter("address"));
+		
+		//ShainIndexにリダイレクト
+		response.sendRedirect("ShainIndex");
 	}
 
 	/**
