@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 070040のソース
 
 
@@ -5,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>社員登録画面</title>
+<title>社員更新画面</title>
 <style>
 .form-input {
 	width: 100%;
@@ -23,10 +25,9 @@
 	margin-top: 10px;
 }
 </style>
-
 </head>
 <body>
-	<h1>社員登録画面</h1>
+	<h1>社員更新画面</h1>
 	<form action="ShainInsertComplete" method="post">
 		<table class="form-table">
 			<tr>
@@ -51,8 +52,13 @@
 				<td><label for="nen">年:</label></td>
 				<td><select id="nen" name="nen" class="form-input" required>
 						<option value="">選択してください</option>
-						<option value="2001">2001</option>
-						<option value="2002">2002</option>
+						<%
+						for (int year = 2001; year <= 2024; year++) {
+						%>
+						<option value="<%=year%>"><%=year%></option>
+						<%
+}
+%>
 				</select></td>
 			</tr>
 			<tr>
@@ -61,7 +67,7 @@
 					class="form-input" required></td>
 			</tr>
 		</table>
-		<button type="submit" class="form-button">登録</button>
+		<button type="submit" class="form-button">更新</button>
 	</form>
 </body>
 </html>
